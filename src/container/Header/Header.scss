@@ -124,11 +124,21 @@
     margin: 1.75rem;
     width: 150px;
     height: 150px;
+
+    img {
+      width: 90%;
+      height: 90%;
+    }
   }
 
   div:nth-child(3) {
     width: 70px;
     height: 70px;
+
+    img {
+      width: 80%;
+      height: 80%;
+    }
   }
 
   @media screen and (min-width: 2000px) {

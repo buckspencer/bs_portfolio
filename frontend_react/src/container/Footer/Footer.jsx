@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import { images } from "../../constants";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { client } from "../../client";
 
@@ -13,7 +12,6 @@ const Footer = () => {
     message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const { name, email, message } = formData;
 
@@ -24,8 +22,6 @@ const Footer = () => {
   };
 
   const handleSubmit = () => {
-    setLoading(true);
-
     const contact = {
       _type: "contact",
       name: name,
@@ -34,7 +30,6 @@ const Footer = () => {
     };
 
     client.create(contact).then(() => {
-      setLoading(false);
       setIsFormSubmitted(true);
     });
   };

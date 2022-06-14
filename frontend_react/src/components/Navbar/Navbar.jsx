@@ -16,10 +16,27 @@ export const Navbar = () => {
       <ul className="app__navbar-links">
         {["home", "work", "contact"].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
-            <div />
             <a href={`#${item}`}>{item}</a>
           </li>
         ))}
+        <li className="app__flex p-text">
+          <a
+            href="https://github.com/buckspencer"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+        </li>
+        <li className="app__flex p-text">
+          <a
+            href="https://www.linkedin.com/in/buck-spencer-a3ba33223/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </li>
       </ul>
 
       <div className="app__navbar-menu">

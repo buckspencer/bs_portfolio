@@ -24,7 +24,7 @@ export const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className="app__work-portfolio"
       >
-        <h2 className="head-text">Deployed Projects</h2>
+        <h2 className="head-text">Work Samples</h2>
         {filterWork.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">

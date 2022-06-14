@@ -26,10 +26,10 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="tag-cmp app__flex">
-            <p className="p-text">
-              Spencer Digital is a single person web development offering
-              consultations and solutions for a variety of web application
-              needs.
+            <p className="p-text text-left">
+              Greetings, I'm Buck Spencer, welcome to my online portfolio feel
+              free to check out some work samples or drop me a line for more
+              infomation.
             </p>
           </div>
         </div>

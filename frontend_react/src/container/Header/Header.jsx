@@ -27,9 +27,8 @@ const Header = () => {
         <div className="app__header-badge">
           <div className="tag-cmp app__flex">
             <p className="p-text text-left">
-              Greetings, I'm Buck Spencer, welcome to my online portfolio feel
-              free to check out some work samples or drop me a line for more
-              infomation.
+              Greetings, my name is Buck. Please check out my work samples or
+              drop me a line for more information.
             </p>
           </div>
         </div>

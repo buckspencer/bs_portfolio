@@ -29,7 +29,7 @@ const Header = () => {
             <p className="p-text text-left">
               Greetings, I am a full stack developer who focuses on application{" "}
               maintenance and augmentation for companies and individuals seeking{" "}
-              to lower cost and increased revenue from their products.
+              to lower cost and increase revenue from their products.
             </p>
           </div>
         </div>

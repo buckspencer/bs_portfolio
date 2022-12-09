@@ -1,9 +1,9 @@
-import React from "react";
-import { motion } from "framer-motion";
+import "./Header.scss";
 
 import { AppWrap } from "../../wrapper";
+import React from "react";
 import { images } from "../../constants";
-import "./Header.scss";
+import { motion } from "framer-motion";
 
 const scaleVariants = {
   whileInView: {
@@ -29,7 +29,7 @@ const Header = () => {
             <p className="p-text text-left">
               Greetings, I am a full stack developer who focuses on application{" "}
               maintenance and augmentation for companies and individuals seeking{" "}
-              to lower cost and increase revenue of their products.
+              to lower cost and increased revenue from their products.
             </p>
           </div>
         </div>
@@ -55,7 +55,7 @@ const Header = () => {
         whileInView={scaleVariants.whileInView}
         className="app__header-circles"
       >
-        {[images.react, images.rails, images.asp_net].map((circle, index) => (
+        {[images.react, images.rails, images.api].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="profile_bg" />
           </div>

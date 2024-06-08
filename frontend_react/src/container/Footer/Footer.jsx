@@ -39,7 +39,7 @@ const Footer = () => {
       <h2 className="head-text">Get in touch.</h2>
 
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+        <div className="app__footer-form app__flex netlify">
           <div className="app__flex">
             <input
               className="p-text"

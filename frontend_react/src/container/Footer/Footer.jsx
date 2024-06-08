@@ -17,11 +17,12 @@ const Footer = () => {
 
   const handleChangeInput = (e) => {
     const { name, value } = e.target;
-
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
     const contact = {
       _type: "contact",
       name: name,
@@ -39,7 +40,7 @@ const Footer = () => {
       <h2 className="head-text">Get in touch.</h2>
 
       {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex netlify">
+        <form className="app__footer-form app__flex netlify" onSubmit={handleSubmit}>
           <div className="app__flex">
             <input
               className="p-text"
@@ -70,10 +71,10 @@ const Footer = () => {
               onChange={handleChangeInput}
             />
           </div>
-          <button className="p-text" type="button" onClick={handleSubmit}>
+          <button className="p-text" type="submit">
             Send it
           </button>
-        </div>
+        </form>
       ) : (
         <div>
           <h3 className="head-text">Thank you for getting in touch!</h3>

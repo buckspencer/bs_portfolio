@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
 
 import "./Footer.scss";
 
@@ -23,16 +22,18 @@ const Footer = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    const contact = {
-      _type: "contact",
-      name: name,
-      email: email,
-      message: message,
-    };
-
-    client.create(contact).then(() => {
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+    .then(() => {
       setIsFormSubmitted(true);
-    });
+    })
+    .catch((error) => alert(error));
   };
 
   return (
@@ -40,7 +41,9 @@ const Footer = () => {
       <h2 className="head-text">Get in touch.</h2>
 
       {!isFormSubmitted ? (
-        <form className="app__footer-form app__flex netlify" onSubmit={handleSubmit}>
+        <form className="app__footer-form app__flex" data-netlify="true" name="contact" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
+          
           <div className="app__flex">
             <input
               className="p-text"
@@ -49,6 +52,7 @@ const Footer = () => {
               name="name"
               value={name}
               onChange={handleChangeInput}
+              required
             />
           </div>
 
@@ -60,6 +64,7 @@ const Footer = () => {
               name="email"
               value={email}
               onChange={handleChangeInput}
+              required
             />
           </div>
           <div>
@@ -69,6 +74,7 @@ const Footer = () => {
               value={message}
               name="message"
               onChange={handleChangeInput}
+              required
             />
           </div>
           <button className="p-text" type="submit">
